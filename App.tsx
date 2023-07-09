@@ -14,6 +14,8 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { SplashScreen } from './src/components/SplashScreen';
+import AuthNavigator from './src/navigators/AuthNavigator';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export default function App() {
   const colorScheme = useColorScheme();
@@ -41,6 +43,7 @@ export default function App() {
           },
     [colorScheme]
   );
+  const Stack = createNativeStackNavigator();
   return (
     <SafeAreaProvider style={{ flex: 1 }}>
       <GestureHandlerRootView style={styles.container}>
